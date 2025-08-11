@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+// src/components/About.tsx
+import { useState } from 'react';
+import profileImage from '../assets/profile.png';
 
 const About = () => {
   const [hoverSide, setHoverSide] = useState<'none' | 'left' | 'right'>('none');
@@ -6,9 +8,8 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-black overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        {/* Wrapper switches to columns on md+ only */}
         <div className="relative min-h-[500px] flex flex-col md:flex-row gap-10 md:gap-0">
-          {/* Left / Designer */}
+          {/* Solution Design */}
           <div
             className={`order-2 md:order-1 md:w-1/2 p-6 md:p-8 transition-all duration-500 relative z-10 ${
               hoverSide === 'right'
@@ -20,35 +21,42 @@ const About = () => {
             onMouseEnter={() => setHoverSide('left')}
             onMouseLeave={() => setHoverSide('none')}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/20 to-transparent opacity-20 z-0 rounded-lg" />
             <div className="relative z-10 md:pr-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-serif">
-                <span className="text-lime-400">Designer</span>
+                <span className="text-lime-400">Solution Design</span>
               </h2>
               <p className="text-gray-300 mb-6 max-w-prose">
-                Specialized in crafting intuitive user interfaces for AI-powered
-                applications. I transform complex AI capabilities into accessible, elegant user experiences.
+                Complex requirements shaped into secure, scalable, and cost-efficient AI systems. Clear roadmaps, strong
+                governance, and production-ready designs that align with business goals and compliance from day one.
               </p>
               <div className="border border-lime-400/30 bg-lime-400/5 rounded-lg p-4 max-w-prose">
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <span className="text-lime-400 mr-2">✓</span>
-                    <span className="text-gray-300">UI/UX Design for AI Applications</span>
+                    <span className="text-gray-300">End-to-end architecture (TOGAF), reference designs & delivery plans</span>
                   </li>
                   <li className="flex items-center">
                     <span className="text-lime-400 mr-2">✓</span>
-                    <span className="text-gray-300">Data Visualization</span>
+                    <span className="text-gray-300">Multimodal RAG (Llama/Vicuna, Vision Transformers, Q-Former)</span>
                   </li>
                   <li className="flex items-center">
                     <span className="text-lime-400 mr-2">✓</span>
-                    <span className="text-gray-300">Responsive Web Design</span>
+                    <span className="text-gray-300">Workflow automation: n8n & Make (orchestration, human-in-the-loop)</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="text-lime-400 mr-2">✓</span>
+                    <span className="text-gray-300">Data pipelines & governance (Spark, Airflow, Delta Lake, GDPR/HIPAA)</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="text-lime-400 mr-2">✓</span>
+                    <span className="text-gray-300">Documentation that ships: ADRs, runbooks, threat models, playbooks</span>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Right / Developer */}
+          {/* LLM Engineering */}
           <div
             className={`order-3 md:order-3 md:w-1/2 p-6 md:p-8 transition-all duration-500 relative z-10 ${
               hoverSide === 'left'
@@ -60,76 +68,83 @@ const About = () => {
             onMouseEnter={() => setHoverSide('right')}
             onMouseLeave={() => setHoverSide('none')}
           >
-            <div className="absolute inset-0 bg-gradient-to-l from-purple-500/20 to-transparent opacity-20 z-0 rounded-lg" />
             <div className="relative z-10 md:pl-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 font-mono">
-                <span className="text-purple-400">Developer</span>
+                <span className="text-purple-400">LLM Engineering</span>
               </h2>
               <p className="text-gray-300 mb-6 max-w-prose">
-                Expert in implementing AI solutions and integrating large language models into applications.
-                I build robust, scalable systems that leverage cutting-edge AI technologies.
+                Transformer systems built for real users: accurate retrieval, tight latency budgets, strong evaluation, and
+                observability. From fine-tuning to APIs and front-ends, the stack delivers business results—reliably.
               </p>
               <div className="border border-purple-400/30 bg-purple-400/5 rounded-lg p-4 max-w-prose">
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <span className="text-purple-400 mr-2">✓</span>
-                    <span className="text-gray-300">LLM Integration & Fine-tuning</span>
+                    <span className="text-gray-300">LLMs & transformers (Llama-3, Vicuna), fine-tuning & eval pipelines</span>
                   </li>
                   <li className="flex items-center">
                     <span className="text-purple-400 mr-2">✓</span>
-                    <span className="text-gray-300">React & TypeScript Development</span>
+                    <span className="text-gray-300">Vector search & retrieval (FAISS, Azure Cognitive Search)</span>
                   </li>
                   <li className="flex items-center">
                     <span className="text-purple-400 mr-2">✓</span>
-                    <span className="text-gray-300">AI API Implementation</span>
+                    <span className="text-gray-300">Agents & tools (Vapi, function calling) with n8n/Make integrations</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="text-purple-400 mr-2">✓</span>
+                    <span className="text-gray-300">APIs & apps (FastAPI, React/TS) with MLflow, CI/CD, and K8s</span>
+                  </li>
+                  <li className="flex items-center">
+                    <span className="text-purple-400 mr-2">✓</span>
+                    <span className="text-gray-300">Testing & quality: unit, E2E, red-team prompts, guardrails, telemetry</span>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Profile Image */}
-          {/* MOBILE: show as a normal block so it NEVER covers text */}
+          {/* Mobile Image (no background box) */}
           <div className="order-1 md:order-2 mx-auto mb-4 md:mb-0 block md:hidden">
-            <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-800 shadow-xl">
+            <div className="w-40 h-40 rounded-full overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=1000"
-                alt="Dr Jay"
+                src={profileImage}
+                alt="Portrait of Jeremiah Richard"
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
 
-          {/* DESKTOP/TABLET: tasteful center overlap, but content has padded gutters so it doesn't get covered */}
+          {/* Desktop Image (tasteful center overlap, still readable) */}
           <div className="hidden md:block md:absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="w-56 h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl ring-1 ring-black/40">
+            <div className="w-56 h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=1000"
-                alt="Dr Jay"
+                src={profileImage}
+                alt="Portrait of Jeremiah Richard"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-lime-400/20 to-purple-500/20 mix-blend-overlay"></div>
             </div>
           </div>
         </div>
 
-        {/* Stats Section */}
+        {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 md:mt-20">
           <div className="border border-gray-800 rounded-lg p-6 text-center hover:border-lime-400/30 transition-all duration-300 transform hover:-translate-y-1">
-            <h3 className="text-lime-400 text-3xl font-bold mb-2">5+</h3>
-            <p className="text-gray-400">Years Experience</p>
+            <h3 className="text-lime-400 text-3xl font-bold mb-2">7+</h3>
+            <p className="text-gray-400">Years in AI/ML</p>
           </div>
+          {/* CHANGED #2 */}
           <div className="border border-gray-800 rounded-lg p-6 text-center hover:border-lime-400/30 transition-all duration-300 transform hover:-translate-y-1">
-            <h3 className="text-lime-400 text-3xl font-bold mb-2">50+</h3>
-            <p className="text-gray-400">Projects Completed</p>
+            <h3 className="text-lime-400 text-3xl font-bold mb-2">£1M+</h3>
+            <p className="text-gray-400">In Project Value Delivered</p>
           </div>
           <div className="border border-gray-800 rounded-lg p-6 text-center hover:border-lime-400/30 transition-all duration-300 transform hover:-translate-y-1">
             <h3 className="text-lime-400 text-3xl font-bold mb-2">4</h3>
             <p className="text-gray-400">Industries Served</p>
           </div>
+          {/* CHANGED #4 */}
           <div className="border border-gray-800 rounded-lg p-6 text-center hover:border-lime-400/30 transition-all duration-300 transform hover:-translate-y-1">
-            <h3 className="text-lime-400 text-3xl font-bold mb-2">∞</h3>
-            <p className="text-gray-400">Possibilities</p>
+            <h3 className="text-lime-400 text-3xl font-bold mb-2">100%</h3>
+            <p className="text-gray-400">On-Time Delivery</p>
           </div>
         </div>
       </div>

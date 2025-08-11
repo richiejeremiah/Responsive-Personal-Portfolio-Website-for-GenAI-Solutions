@@ -1,4 +1,4 @@
-import React from 'react';
+// src/App.tsx
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,8 +7,10 @@ import Projects from './components/Projects';
 import CompanyLogos from './components/CompanyLogos';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+
 export function App() {
-  return <div className="bg-black text-white min-h-screen">
+  return (
+    <div className="bg-black text-white min-h-screen">
       <Header />
       <main>
         <Hero />
@@ -16,8 +18,10 @@ export function App() {
         <Skills />
         <Projects />
         <CompanyLogos />
+        {/* Keep a single Contact section */}
         <Contact />
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 }
